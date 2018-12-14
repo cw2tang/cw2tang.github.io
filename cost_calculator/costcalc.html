@@ -7,11 +7,11 @@
 	<body>
 		<div class="container">
     		<div class="blurb">
-                <h1>Price Calculator</h1>
+                <h1>价格计算器</h1>
                 
                 <table>
 		    <tr>
-                        <td class="required">红色必须填写</td>
+                        <td class="required">***红色必须填写</td>
                     </tr>
                     <tr>
                         <td class="required">原先购买税前价格(Cost)</td>
@@ -102,22 +102,16 @@
                 i = parseInt(document.getElementById("I").value);
                 j = parseInt(document.getElementById("J").value);
 
-                alert("e is" + e);
-
                 if(isNaN(i) && isNaN(j)){
-                    alert('given E1');
                     calculateAll(0);
                 }else if(isNaN(e)){
-                    alert('given I/J1');
                     if(i > 0 && j > 0){
-                        alert("Please only enter I or J");
+                        alert("请输入涨价后的利润【或者】利润率(二选一)");
                     }
                     calculateAll(1);
                 }else{
-                    alert("E cannot have a value while I or J has a value");
+                    alert("如果有填写涨价后利润或者利润率，请保留销售涨价幅度空白");
                 }
-
-                alert(a);
             }
             function calculateC(){
                 c = b - a;
@@ -131,10 +125,8 @@
                 calculateD();
 
                 if(boo == 0){
-                    alert('given E2');
                     calculateGJ();
                 }else if(boo == 1){
-                    alert('given I/J2');
                     calculateGE();
                 }
             }
@@ -143,7 +135,6 @@
             
             //given E, calculate G and I/J
             function calculateGJ(){
-                alert('given E3');
                 g = b + e;
                 h = g * 1.13;
                 i = g - f;
@@ -152,7 +143,6 @@
 
             //given I/J, calculate G and E
             function calculateGE(){
-                alert('given I/J3');
                 if(isNaN(i)){
                     g = (j * f) + f;
                     h = g * 1.13;
@@ -165,7 +155,7 @@
                     e = g - b;
                     j = i / f;
                 }else{
-                    alert("Error in I or J");
+                    alert("Error");
                 }
             }
 
