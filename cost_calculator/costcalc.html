@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Price Calculator</title>
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+	</head>
+	<body>
+		<div class="container">
+    		<div class="blurb">
+                <h1>Price Calculator</h1>
+                
+                <table>
+                    <tr>
+                        <td class="required">A</td>
+                        <td><input type="text" id="A"></td>
+                    </tr>
+                    <tr>
+                        <td class="required">B</td>
+                        <td><input type="text" id="B"></td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td><input type="text" id="C"></td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                        <td><input type="text" id="D"></td>
+                    </tr>
+                    <tr>
+                        <td>E</td>
+                        <td><input type="text" id="E"></td>
+                    </tr>
+                    <tr>
+                        <td class="required">F</td>
+                        <td><input type="text" id="F"></td>
+                    </tr>
+                    <tr>
+                        <td>G</td>
+                        <td><input type="text" id="G"></td>
+                    </tr>
+                    <tr>
+                        <td>H</td>
+                        <td><input type="text" id="H"></td>
+                    </tr>
+                    <tr>
+                        <td>I</td>
+                        <td><input type="text" id="I"></td>
+                    </tr>
+                    <tr>
+                        <td>J</td>
+                        <td><input type="text" id="J"></td>
+                    </tr>
+                </table><br>
+                
+                <button type="button" onclick="clearAll()">Clear</button>
+                <button type="button" onclick="printresult()">Calculate</button>
+
+            </div><!-- /.blurb --> 
+        </div><!-- /.container -->
+        
+        
+		<!-- <footer>
+    		<ul>
+        		<li><a href="mailto:gt00unit@gmail.com">email</a></li>
+        		<li><a href="https://github.com/cw2tang">github.com/cw2tang</a></li>
+			</ul>
+        </footer> -->
+        <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+        <script>
+            var a,b,c,d,e,f,g,h,i,j = 0;
+
+            function myFunction(p1, p2) {
+              return p1 * p2;
+            }
+            document.getElementById("demo").innerHTML = myFunction(4, 3);
+
+            function clearAll(){
+                document.getElementById("A").value = '';
+                document.getElementById("B").value = '';
+                document.getElementById("C").value = '';
+                document.getElementById("D").value = '';
+                document.getElementById("E").value = '';
+                document.getElementById("F").value = '';
+                document.getElementById("G").value = '';
+                document.getElementById("H").value = '';
+                document.getElementById("I").value = '';
+                document.getElementById("J").value = '';
+            }
+
+            function init(){
+                a = parseInt(document.getElementById("A").value);
+                b = parseInt(document.getElementById("B").value);
+                c = parseInt(document.getElementById("C").value);
+                d = parseInt(document.getElementById("D").value);
+                e = parseInt(document.getElementById("E").value);
+                f = parseInt(document.getElementById("F").value);
+                g = parseInt(document.getElementById("G").value);
+                h = parseInt(document.getElementById("H").value);
+                i = parseInt(document.getElementById("I").value);
+                j = parseInt(document.getElementById("J").value);
+
+                alert("e is" + e);
+
+                if(isNaN(i) && isNaN(j)){
+                    alert('given E1');
+                    calculateAll(0);
+                }else if(isNaN(e)){
+                    alert('given I/J1');
+                    if(i > 0 && j > 0){
+                        alert("Please only enter I or J");
+                    }
+                    calculateAll(1);
+                }else{
+                    alert("E cannot have a value while I or J has a value");
+                }
+
+                alert(a);
+            }
+            function calculateC(){
+                c = b - a;
+            }
+            function calculateD(){
+                d = (b - a)/a;
+            }
+
+            function calculateAll(boo){
+                calculateC();
+                calculateD();
+
+                if(boo == 0){
+                    alert('given E2');
+                    calculateGJ();
+                }else if(boo == 1){
+                    alert('given I/J2');
+                    calculateGE();
+                }
+            }
+
+            
+            
+            //given E, calculate G and I/J
+            function calculateGJ(){
+                alert('given E3');
+                g = b + e;
+                h = g * 1.13;
+                i = g - f;
+                j = (g - f)/f;
+            }
+
+            //given I/J, calculate G and E
+            function calculateGE(){
+                alert('given I/J3');
+                if(isNaN(i)){
+                    g = (j * f) + f;
+                    h = g * 1.13;
+                    e = g - b;
+                    i = g - f;
+                }else if(isNaN(j)){
+                    g = i + f;
+                    alert("g=" + g);
+                    h = g * 1.13;
+                    e = g - b;
+                    j = i / f;
+                }else{
+                    alert("Error in I or J");
+                }
+            }
+
+            function printresult(){
+                init();
+                document.getElementById("A").value = a;
+                document.getElementById("B").value = b;
+                document.getElementById("C").value = c;
+                document.getElementById("D").value = d;
+                document.getElementById("E").value = e;
+                document.getElementById("F").value = f;
+                document.getElementById("G").value = g;
+                document.getElementById("H").value = h;
+                document.getElementById("I").value = i;
+                document.getElementById("J").value = j;
+            }
+        </script>
+	</body>
+</html>
