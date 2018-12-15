@@ -54,6 +54,6 @@ ul.posts li {
     background-color:rgb(168, 168, 168);
 }
 
-tr.spaceUnder>td {
-    padding-bottom: 5em;
+.spaceUnder {
+    padding-bottom: 2em;
 }
