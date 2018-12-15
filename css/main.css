@@ -46,6 +46,14 @@ ul.posts li {
     color: red;
 }
 
+.option1 {
+    color: orangered;
+}
+
+.option2 {
+    color: green;
+}
+
 .readonly {
     color: rgb(100, 100, 100);
 }
