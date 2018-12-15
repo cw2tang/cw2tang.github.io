@@ -46,6 +46,10 @@ ul.posts li {
     color: red;
 }
 
+.hint {
+    font-weight: bold;
+}
+
 .option1 {
     color: blue;
 }
@@ -54,7 +58,7 @@ ul.posts li {
     color: green;
 }
 
-.readonly {
+.readonly { 
     color: rgb(59, 57, 57);
 }
 
@@ -63,5 +67,5 @@ ul.posts li {
 }
 
 .spacer {
-    height:50px;
+    height:20px;
 }
