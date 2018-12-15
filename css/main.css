@@ -51,9 +51,10 @@ ul.posts li {
 }
 
 .readonly-box {
-    background-color:rgb(168, 168, 168);
+    background-color:rgb(226, 216, 216);
 }
 
 .spaceUnder {
-    padding-bottom: 2em;
+    border-collapse: separate;
+    border-spacing: 0 2em;
 }
