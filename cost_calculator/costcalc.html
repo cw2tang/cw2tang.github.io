@@ -110,7 +110,10 @@
                 i = parseFloat(document.getElementById("I").value);
                 j = parseFloat(document.getElementById("J").value);
 
-                alert(isNaN(e) + isNaN(g) + isNaN(h) + isNaN(i) + isNaN(j));
+                //alert(isNaN(e) + isNaN(g) + isNaN(h) + isNaN(i) + isNaN(j));
+                if((isNaN(e) + isNaN(g) + isNaN(h) + isNaN(i) + isNaN(j)) != 4){
+                    alert("请确认E, G, H, I , J只填选一项");
+                }
 
                 if(isNaN(i) && isNaN(j)){
                     if((e > 0 && g > 0) || (e > 0 && h > 0)){
