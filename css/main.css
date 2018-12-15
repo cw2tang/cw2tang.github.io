@@ -44,6 +44,7 @@ ul.posts li {
 
 .required {
     color: red;
+    font-weight: bold;
 }
 
 .hint {
@@ -67,5 +68,5 @@ ul.posts li {
 }
 
 .spacer {
-    height:20px;
+    height:10px;
 }
