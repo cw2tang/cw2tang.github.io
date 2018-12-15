@@ -61,8 +61,3 @@ ul.posts li {
 .readonly-box {
     background-color:rgb(226, 216, 216);
 }
-
-.spaceUnder {
-    border-collapse: separate;
-    border-spacing: 0 2em;
-}
