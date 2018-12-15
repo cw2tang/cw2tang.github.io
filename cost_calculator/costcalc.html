@@ -42,10 +42,7 @@
                         <td class="hint">***避免计算冲突：</td>
                     </tr>
                     <tr>
-                        <td class="hint">以下蓝绿组只能填写一组</td>
-                    </tr>
-                    <tr>
-                        <td class="hint">一组只能填写一个数字</td>
+                        <td class="hint">以下五项只可填选一项</td>
                     </tr>
 
                     <tr>
@@ -113,18 +110,20 @@
                 i = parseFloat(document.getElementById("I").value);
                 j = parseFloat(document.getElementById("J").value);
 
+                alert(isNaN(e) + isNaN(g) + isNaN(h) + isNaN(i) + isNaN(j));
+
                 if(isNaN(i) && isNaN(j)){
                     if((e > 0 && g > 0) || (e > 0 && h > 0)){
-                        alert("请输入涨价幅度【或者】涨价后的价格(二选一)");
+                        //alert("请输入涨价幅度【或者】涨价后的价格(二选一)");
                     }
                     calculateAll(0);
                 }else if(isNaN(e)){
                     if(i > 0 && j > 0){
-                        alert("请输入涨价后的利润【或者】利润率(二选一)");
+                        //alert("请输入涨价后的利润【或者】利润率(二选一)");
                     }
                     calculateAll(1);
                 }else{
-                    alert("如果有填写涨价后利润或者利润率，请保留销售涨价幅度空白");
+                    //alert("如果有填写涨价后利润或者利润率，请保留销售涨价幅度空白");
                 }
             }
             function calculateC(){
@@ -154,6 +153,8 @@
                     h = g * 1.13;
                     i = g - f;
                     j = (g - f)/f;
+                }else if(g > 0 && h > 0){
+                    //alert("请输入涨价后的销售税前【或者】税后价格(二选一)");
                 }else if(isNaN(e)){
                     if(isNaN(g)){
                         g = h / 1.13;
@@ -167,7 +168,6 @@
                         j = (g - f)/f;
                     }
                 }else{
-                    //alert("请输入涨价幅度【或者】涨价后的价格(二选一)");
                 }
             }
 
