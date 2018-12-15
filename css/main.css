@@ -47,7 +47,7 @@ ul.posts li {
 }
 
 .option1 {
-    color: orangered;
+    color: blue;
 }
 
 .option2 {
@@ -55,7 +55,7 @@ ul.posts li {
 }
 
 .readonly {
-    color: rgb(100, 100, 100);
+    color: rgb(59, 57, 57);
 }
 
 .readonly-box {
