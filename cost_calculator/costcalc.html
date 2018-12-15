@@ -107,6 +107,9 @@
                 j = parseFloat(document.getElementById("J").value);
 
                 if(isNaN(i) && isNaN(j)){
+                    if((e > 0 && g > 0) || (e > 0 && h > 0)){
+                        alert("请输入涨价幅度【或者】涨价后的价格(二选一)");
+                    }
                     calculateAll(0);
                 }else if(isNaN(e)){
                     if(i > 0 && j > 0){
@@ -139,10 +142,26 @@
             
             //given E, calculate G and I/J
             function calculateGJ(){
-                g = b + e;
-                h = g * 1.13;
-                i = g - f;
-                j = (g - f)/f;
+                if(isNaN(g) && isNaN(h)){
+                    g = b + e;
+                    h = g * 1.13;
+                    i = g - f;
+                    j = (g - f)/f;
+                }else if(isNaN(e)){
+                    if(isNaN(g)){
+                        g = h / 1.13;
+                        e = g - b;
+                        i = g - f;
+                        j = (g - f)/f;
+                    }else if(isNaN(h)){
+                        h = g * 1.13;
+                        e = g - b;
+                        i = g - f;
+                        j = (g - f)/f;
+                    }
+                }else{
+                    alert("请输入涨价幅度【或者】涨价后的价格(二选一)");
+                }
             }
 
             //given I/J, calculate G and E
