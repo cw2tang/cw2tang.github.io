@@ -61,3 +61,7 @@ ul.posts li {
 .readonly-box {
     background-color:rgb(226, 216, 216);
 }
+
+.spacer {
+    line-height:30px;
+}
