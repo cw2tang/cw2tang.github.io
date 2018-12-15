@@ -47,5 +47,9 @@ ul.posts li {
 }
 
 .readonly {
-    color: grey;
+    color: rgb(100, 100, 100);
+}
+
+.readonly-box {
+    background-color:rgb(168, 168, 168);
 }
