@@ -69,3 +69,7 @@ ul.posts li {
 .spacer {
     height:10px;
 }
+
+.hide{
+    display:none;  
+}
