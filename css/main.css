@@ -26,7 +26,7 @@ h1 {
 p {
     font-size: 1.5em;
     line-height: 1.4em;
-    color: #333;
+    color: rgb(163, 163, 163);
 }
 footer {
     border-top: 1px solid #d5d5d5;
@@ -72,4 +72,34 @@ ul.posts li {
 
 .hide{
     display:none;  
+}
+
+body enlarge {
+    font-size: 8px;
+    color: rgb(145, 146, 145); 
+    -webkit-transition: color 2s, font-size 2s;
+       -moz-transition: color 2s, font-size 2s;
+         -o-transition: color 2s, font-size 2s;
+            transition: color 2s, font-size 2s;
+}
+
+enlarge:hover {
+    font-size: 1.5em;
+    color: #333;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}
+
+.content {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 70%;
+    padding: 20px;
 }
