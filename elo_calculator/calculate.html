@@ -1,0 +1,37 @@
+<title>Elo Calculator</title>
+
+<body>
+
+<div id="wrapper">
+	<h3>Elo Calculator</h3>
+	<input id="eloa" placeholder="Elo A"></input>
+	<br><input id="elob" placeholder="Elo B"></input>
+	<br><button id="go">Calculate</button>
+	<div id="pct"></div>
+
+</div>
+
+<script>
+	function calc() {
+		var eloa = document.getElementById("eloa").value;
+		var elob = document.getElementById("elob").value;
+		var pct = 1 - 1 / (1 + Math.pow(10, (eloa-elob)/400));
+		var format = Math.round(pct * 10000) / 100
+		var simple = Math.round(1 / pct * 100) / 100
+		document.getElementById("pct").innerHTML ="<br><br>Win rate A:<br>" + format + "% (1 in " + simple + ")";
+	}
+
+	document.getElementById("go").onclick = function() {
+		calc();
+	}
+
+	window.onkeyup = function(e) {
+		if (e.keyCode == 13 /*enter*/) {
+			calc();
+		}
+	}
+
+	document.documentElement.style.overflow = 'hidden';
+
+</script>
+</body>
